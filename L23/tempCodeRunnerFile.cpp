@@ -1,1 +1,2 @@
-cout<<sum<<endl;
+
+            num++;
