@@ -1,5 +1,9 @@
 #include <iostream>
 using namespace std;
+
+//A void pointer is a pointer that has no associated data type with it. 
+//A void pointer can hold an address of any type and can be typecasted to any type.
+
 int main() {
     void * ptr;
     int i = 10;

@@ -25,8 +25,9 @@ int main() {
 
     cout<<" size of pointer is "<<sizeof(p2)<<endl;
 
-
-
+    int *pn  =NULL;
+    cout<<pn<<endl;
+    cout<<*pn<<endl;
 
 
     return 0;
