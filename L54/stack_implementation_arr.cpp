@@ -102,15 +102,6 @@ int main() {
 
 
 
-
-
-
-
-
-
-
-
-
     // stack<string> s;
 
     // s.push("love");
@@ -145,32 +136,6 @@ int main() {
     // }
 
     // cout<<" size of stack is "<<s.size()<<endl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

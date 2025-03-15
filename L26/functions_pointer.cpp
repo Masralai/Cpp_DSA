@@ -21,7 +21,7 @@ void add_update(int *p){
 
 int getSum( int *arr/*int arr[]*/ , int n){
 
-    cout<<"SIZE : "<< sizeof(arr)<<endl;
+    cout<<"SIZE : "<< sizeof(arr)<<endl;//will be equal 4 as we pass arr as a pointer in the function
 
     int sum = 0;
     for(int i=0; i<n;i++){

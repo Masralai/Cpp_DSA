@@ -90,7 +90,7 @@ int main() {
     cout<<endl<<endl;
 
 
-    string arr[10]={"zero","one ","two","three","four","five","six","seven","eight","nine"};
+    string arr[10]={"zero","one","two","three","four","five","six","seven","eight","nine"};
 
     saydigit(n,arr);
     cout<<endl;

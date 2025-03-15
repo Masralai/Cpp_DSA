@@ -32,7 +32,7 @@ void counting(int n){
 
     cout<<n<<endl;
 
-    //recursive relation
+    //recursive relation - tail 
     counting(n-1);
     
 }
@@ -43,7 +43,7 @@ void counting2(int n){
         return ;
     }
     
-    //recursive relation
+    //recursive relation -head
     counting2(n-1);
     
     cout<<n<<endl;
