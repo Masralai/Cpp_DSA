@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int partition(int arr[],int s, int e){
+int partition(int *arr,int s, int e){
     int pivot =arr[s];
 
     int cnt = 0;
@@ -16,15 +16,14 @@ int partition(int arr[],int s, int e){
     swap(arr[pivotIndex],arr[s]);
 
     //left and right wala part sambhal lete hai
-
     int i=s,j=e;
 
     while (i<pivotIndex && j>pivotIndex){
 
-        while(arr[i]<=pivot){
+        while(arr[i]<=pivot){//left part check
             i++;
         }
-        while(arr[j]>pivot){
+        while(arr[j]>pivot){//right part check
             j--;
         }
         if(i<pivotIndex && j>pivotIndex){
@@ -33,11 +32,9 @@ int partition(int arr[],int s, int e){
     }
 
     return pivotIndex;
-
-
 }
 
-void quickSort(int arr[],int s,int e){
+void quickSort(int *arr,int s,int e){
 
     //base case
     if(s>=e){
@@ -57,8 +54,8 @@ void quickSort(int arr[],int s,int e){
 
 int main() {
     
-    int arr[5] = {2,4,1,6,9};
-    int n =5;
+    int arr[10] = {2,4,1,6,9,24,5,53,3,23};
+    int n =10;
 
     quickSort(arr,0,n-1);
 

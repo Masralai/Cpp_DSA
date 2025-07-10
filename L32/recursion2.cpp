@@ -81,9 +81,9 @@ int main() {
     //cout<<endl;
     //reachHome(src,dest);
 
-    int n=412;
-    //int ans = fibonacci(n);
-    //cout<<ans<<endl;
+    int n=41;
+    int ans = fibonacci(n);
+    cout<<ans<<endl;
 
     //cout<<climbStairs(n);
 

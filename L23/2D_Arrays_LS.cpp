@@ -22,7 +22,7 @@ int main() {
     //int arr[3][4]={1,2,3,4,5,6,7,8,9,10,14,16};//elements inputed row wise
     int arr[3][4]={{1,11,111,1111},{2,22,222,2222},{3,33,333,3333}};
     
-
+ 
     //taking input ->row wise input
 
     // for( int row = 0 ;row<3;row++){
