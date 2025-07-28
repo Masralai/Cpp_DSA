@@ -123,7 +123,7 @@ int main() {
     insertNode(tail,5,3);
     print(tail);
 
-/*
+
     insertNode(tail,3,5);
     print(tail);
 
@@ -141,9 +141,9 @@ int main() {
     
     insertNode(tail,3,4);
     print(tail);
-*/
-    deleteNode(tail,3);
-    print(tail);
+
+    // deleteNode(tail,3);
+    // print(tail);
 
 
     return 0;

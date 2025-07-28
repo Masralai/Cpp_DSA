@@ -1,8 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-//https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa0NrSGhtc2ZIRlZULXhpUEJsWGw5UW5vXzZ3Z3xBQ3Jtc0ttb3lmcU1xbmh5WUs5UmVES280N01WcjVzT05kYUYySWgxQ3hvUFBtc0pGY1hZNFVYaDg4eVo5alI2MVJZbld6Q2FRb1VaMmg5MWVrcC1YOEpWMmMxNVhqZmtlTGVXYmdWMzdFY2o5MU9memFVR2JBaw&q=https%3A%2F%2Fbit.ly%2F3tRF3ga&v=vqS1nVQdCJM
-
+//https://www.naukri.com/code360/problems/middle-of-linked-list_973250?source=youtube&campaign=Lovebabbarcodestudio_24thJan&utm_source=youtube&utm_medium=affiliate&utm_campaign=Lovebabbarcodestudio_24thJan
 
 class Node{
     public:
