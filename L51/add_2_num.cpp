@@ -17,7 +17,7 @@ class Node{
 };
 Node<int>* reverse(Node<int>* head){
 
-    if(head == NULL /*case of empty list*/|| head->next==NULL/*case of single node */){
+    if(head == NULL|| head->next==NULL){
         return head;
     }
 
@@ -26,7 +26,7 @@ Node<int>* reverse(Node<int>* head){
     Node* forward=NULL;
 
     while(curr!=NULL){
-        
+        forward = curr->next;
         curr->next = prev;
         prev=curr;
         curr=forward;
@@ -46,8 +46,6 @@ void insertAtTail(Node<int>* &head,Node<int>* &tail, int data){
         tail->next = temp;
         tail = temp;
     }
-
-    
 }
 
 Node<int>* addNodes(Node<int>* first, Node*<int> second){
@@ -56,44 +54,34 @@ Node<int>* addNodes(Node<int>* first, Node*<int> second){
     Node<int>* ansHead = NULL;
     Node<int>* ansTail =NULL;
 
-    while(first!=NULL && second!=NULL){
-        int sum = carry + first->data + second->data;
+    while(first!=NULL || second!=NULL || carry !=0){
+
+        int val1 = 0;
+        if(first!=NULL){
+            val1 = first->data;
+        }
+
+        int val2 = 0;
+        if(second!=NULL){
+            val2 = second->data;
+        }
+
+        int sum = carry + val1 + val2;
         int digit = sum%10;
         //create node and add in ans LL
         insertAtTail(ansHead,ansTail,digit);
+
         carry = sum/10;
         
-        first = first->next;
-        second = second ->next;
+        if(first!=NULL)
+            first = first->next;
+        
+        if(second!=NULL)
+            second = second ->next;
     }
 
-    while(first!=NULL){
-        int sum = carry + first->data;
-        int digit = sum%10;
-        //create node and add in ans LL
-        insertAtTail(ansHead,ansTail,digit);
-        carry = sum/10;
 
-        first = first->next;
-    }
-
-    while(second!=NULL){
-        int sum = carry + second->data;
-        int digit = sum%10;
-        insertAtTail(ansHead,ansTail,digit);
-        carry = sum/10;
-
-        second = second->next;
-    }
-    
-    while(carry!=0){ //for the case when carry is left (ex- 99+990 = 1089)
-        int sum = carry;
-        int digit = sum%10;
-        insertAtTail(ansHead,ansTail,digit);
-        carry = sum/10;
-    }
     return ansHead;
-
 }
 
 Node<int>* addTwoLists(Node<int>* num1, Node<int>* num2){
@@ -106,6 +94,14 @@ Node<int>* addTwoLists(Node<int>* num1, Node<int>* num2){
 
     //step3 -reverse
     ans = reverse(ans);
+
+    //step4 - handle leading zeros in the result
+    // If the result is not just '0', remove leading zeros.
+    while (ans != NULL && ans->next != NULL && ans->data == 0) {
+        Node* temp = ans;
+        ans = ans->next;
+        delete temp; // Free memory of the removed node
+    }
     
     return ans;
 }
