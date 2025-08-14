@@ -62,6 +62,10 @@ void levelOrderTraversal(node* root){ //bfs
         }
     }
 }  
+node* buildFromLevelOrder(node* root){ //creating tree from provided level order
+    
+
+}
 void reverseLevelOrderTraversal(node* root){ //bfs
     queue<node*> q;
     stack<node*> st;
@@ -89,6 +93,7 @@ void reverseLevelOrderTraversal(node* root){ //bfs
     }
 } 
 
+//DFS - recursive methods
 void inOrder(node* root){ //LNR
     //base case
     if(root==NULL){
