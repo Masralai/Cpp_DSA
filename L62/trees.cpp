@@ -175,25 +175,25 @@ int main() {
     //1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
 
 
-    // //level order
-    // cout<<"level order traversal"<<endl;
-    // levelOrderTraversal(root);
-    // cout<<"\n\n";
+    //level order
+    cout<<"level order traversal"<<endl;
+    levelOrderTraversal(root);
+    cout<<"\n\n";
 
-    // cout<<"reverse level order"<<endl;
-    // reverseLevelOrderTraversal(root);
-    // cout<<"\n\n";
+    cout<<"reverse level order"<<endl;
+    reverseLevelOrderTraversal(root);
+    cout<<"\n\n";
 
-    // cout<<"inorder traversal"<<endl;
-    // inOrder(root);
-    // cout<<"\n\n";
+    cout<<"inorder traversal"<<endl;
+    inOrder(root);
+    cout<<"\n\n";
 
-    // cout<<"preorder traversal"<<endl;
-    // preOrder(root);
-    // cout<<"\n\n";
+    cout<<"preorder traversal"<<endl;
+    preOrder(root);
+    cout<<"\n\n";
 
-    // cout<<"post order traversal"<<endl;
-    // postOrder(root);
+    cout<<"post order traversal"<<endl;
+    postOrder(root);
 
     return 0;
 }
