@@ -62,9 +62,36 @@ void levelOrderTraversal(node* root){ //bfs
         }
     }
 }  
-node* buildFromLevelOrder(node* root){ //creating tree from provided level order
-    
+void buildFromLevelOrder(node* &root){ //creating tree with level order
+    queue<node*> q;
+    cout<<" enter data for root"<<endl;
+    int data;
+    cin>>data;    
+    root = new node(data);
+    q.push(root);
 
+    while(!q.empty()){
+        node* temp = q.front();
+        q.pop();
+
+        cout<<"enter left node for "<<temp->data<<endl;
+        int leftData;
+        cin>>leftData;
+
+        if(leftData!=-1){
+            temp->left = new node(leftData);
+            q.push(temp->left);
+        }
+
+        cout<<"enter right node for "<<root->data<<endl;
+        int rightData;
+        cin>>rightData;
+
+        if(rightData!=-1){
+            temp->right = new node(rightData);
+            q.push(temp->right);
+        }
+    }
 }
 void reverseLevelOrderTraversal(node* root){ //bfs
     queue<node*> q;
@@ -140,30 +167,33 @@ int main() {
     node* root =NULL;
 
     //creating a tree
-    root = buildTree(root);
-
+    //root = buildTree(root); //tree building with recursion
     //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
 
-
-    //level order
-    cout<<"level order traversal"<<endl;
+    buildFromLevelOrder(root); ////tree building with level order
     levelOrderTraversal(root);
-    cout<<"\n\n";
+    //1 3 5 7 11 17 -1 -1 -1 -1 -1 -1 -1
 
-    cout<<"reverse level order"<<endl;
-    reverseLevelOrderTraversal(root);
-    cout<<"\n\n";
 
-    cout<<"inorder traversal"<<endl;
-    inOrder(root);
-    cout<<"\n\n";
+    // //level order
+    // cout<<"level order traversal"<<endl;
+    // levelOrderTraversal(root);
+    // cout<<"\n\n";
 
-    cout<<"preorder traversal"<<endl;
-    preOrder(root);
-    cout<<"\n\n";
+    // cout<<"reverse level order"<<endl;
+    // reverseLevelOrderTraversal(root);
+    // cout<<"\n\n";
 
-    cout<<"post order traversal"<<endl;
-    postOrder(root);
+    // cout<<"inorder traversal"<<endl;
+    // inOrder(root);
+    // cout<<"\n\n";
+
+    // cout<<"preorder traversal"<<endl;
+    // preOrder(root);
+    // cout<<"\n\n";
+
+    // cout<<"post order traversal"<<endl;
+    // postOrder(root);
 
     return 0;
 }

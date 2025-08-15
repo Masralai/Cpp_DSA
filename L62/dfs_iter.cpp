@@ -42,29 +42,51 @@ node* buildTree(node* root){
 }
 
 //DFS - iterative methods
-void inOrder(node* root){
-    if(root==NULL){
-        return;
-    }
+
+//1. Inorder
+
+// void inOrder(node* root){
+//     if(root==NULL){
+//         return;
+//     }
+//     stack<node*> st;
+//     node * temp =root;
+//     while(temp!=NULL || !st.empty()){
+//         //reach left most node - L
+//         while(temp!=NULL){
+//             st.push(temp);
+//             temp = temp->left;
+//         }
+//         //print node and pop - N
+//         temp = st.top();
+//         st.pop();
+//         cout<<temp->data<<" ";
+//         //reach right most node - R
+//         temp = temp->right;
+//     }
+// }
+
+vector<int> inOrderTravesal(node* root){
     stack<node*> st;
-    node * temp =root;
+    node* node = root;
+    vector<int> inorder;
+    while(true){
+        if(node!=NULL){
+            st.push(node);
+            node = node->left;
+        }else{
 
-    while(temp!=NULL || !st.empty()){
-        //reach left most node - L
-        while(temp!=NULL){
-            st.push(temp);
-            temp = temp->left;
+            if(st.empty()) break;
+            node = st.top();
+            st.pop();
+            inorder.push_back(node->data);
+            node = node->right;
         }
-
-        //print node and pop - N
-        temp = st.top();
-        st.pop();
-        cout<<temp->data<<" ";
-
-        //reach right most node - R
-        temp = temp->right;
     }
+    return inorder;
 }
+
+//2. preorder
 
 /* go to cpp _ PREORDER
 
@@ -151,32 +173,32 @@ void preOrder(node* root){
         if(temp->left) st.push(temp->left);
     }
 }
+vector<int> preOrderTraversal(node* root){
+    vector<int> preorder;
+    if(root == NULL) return preorder;
+
+    stack<node*> st;
+    st.push(root);
+    while(!st.empty()){
+        root = st.top();
+        st.pop();
+        preorder.push_back(root->data);
+        if(root->right) st.push(root->right);
+        if(root->left) st.push(root->left);
+    }
+    return preorder;
+}
+
+//3. postorder
+
 void postOrder(node* root){
     
-    if(root==NULL){
-        return;
-    }
-    stack<node*> st;
-    node * temp =root;
-    st.push(root);
-
-    while(!st.empty()){
-        
-            
-        //push left child
-        while(temp!=NULL){
-            st.push(temp->left);
-            temp = temp->left;
-        }
-        //print node and pop 
-        temp = st.top();
-        st.pop();
-        cout<<temp->data<<" ";
-
-        //push right child 
-        if(temp->right) st.push(temp->right);
-    }
 }
+
+vector<int> postOrderTraversal(node* root){
+
+}
+
 
 int main() {
     node* root =NULL;
@@ -185,11 +207,19 @@ int main() {
     //1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     
     cout<<"inorder traversal"<<endl;
-    inOrder(root);
+    //inOrder(root);
+    vector<int> inorder = inOrderTravesal(root);
+    for(auto i:inorder){ // in each iteration, the variable i is assigned the value of the element at the current position, not the index.
+        cout<<i<<" ";
+    }
     cout<<"\n\n";
 
     cout<<"preorder traversal"<<endl;
-    preOrder(root);
+    //preOrder(root);
+    vector<int> preorder = preOrderTraversal(root);
+    for( auto i: preorder){
+        cout<<i<<" ";
+    }
     cout<<"\n\n";
 
     cout<<"post order traversal"<<endl;
