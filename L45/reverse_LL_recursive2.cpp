@@ -40,10 +40,20 @@ Node* reverse1(Node* head){
 } 
 
 Node* reverseLinkedList(Node* head){
-
     return reverse1(head);
-
 }
+
+Node* reverseLinkedList1(Node* head){
+    if(head == NULL /*case of empty list*/|| head->next==NULL/*case of single node */){
+        return head;
+    }
+
+    Node* rest = reverseLinkedList1(head->next);
+    head->next->next=head;
+    head->next=NULL; 
+    return rest;
+}
+
  
 
 int main() { 

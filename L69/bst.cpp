@@ -143,17 +143,17 @@ node* deleteFromBST(node* root , int d){
         }
         //right child
         if(root->left==NULL && root->right!=NULL){
-            node* temp = root->right;
-            delete root;
-            return temp;
+            node* temp = root->right;//pointing to right child
+            delete root;//deleting root
+            return temp;//returning right child to parent node
         }
 
 
         //2 child
         if(root->left!=NULL && root->right!=NULL){
-            int mini = minValue(root->right)->data;
-            root->data = mini;
-            root->right = deleteFromBST(root->right,mini);
+            int mini = minValue(root->right)->data; //finding min value in right subtree 
+            root->data = mini;//and copying it to root
+            root->right = deleteFromBST(root->right,mini);//deleting the duplicate node from right subtree
             return root;
         }
 

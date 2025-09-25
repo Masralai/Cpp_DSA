@@ -157,6 +157,18 @@ void deleteNode(int position, Node* &head){
     }
 }
 
+void deleteByPointer(Node* head, Node* loc){
+    if(head==NULL || loc==NULL) return;
+        
+    
+    if(loc->prev==NULL) head = loc->next;
+    else loc->prev->next = loc->next;
+        
+    if(loc->next!=NULL) loc->next->prev = loc->prev;
+    
+    delete loc;
+}
+
 
 
 int main() {

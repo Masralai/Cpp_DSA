@@ -46,7 +46,17 @@ Node* reverseLinkedList(Node* head){
     }
 
     return prev;
+}
 
+void reverse(Node* head ){
+    while(curr!=NULL){
+        
+        forward = curr->next;
+        curr->next = prev;
+        prev=curr;
+        curr=forward;
+    }
+    head = prev;
 }
 
 int main() {

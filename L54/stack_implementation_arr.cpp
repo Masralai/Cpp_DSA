@@ -57,6 +57,10 @@ class stack{
         }
     }
 
+    bool isFUll(){
+        if(top == size-1) return true;
+    }
+
 };
 
 
